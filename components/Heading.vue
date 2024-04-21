@@ -1,7 +1,17 @@
+<script setup lang="ts">
+const { isDarkMode } = useDarkMode();
+</script>
+
 <template>
-  <div class="container">
+  <div
+    class="container"
+    :style="isDarkMode ? { backgroundColor: '#182238' } : null"
+  >
     <div class="content-container">
-      <div class="text-container">
+      <div
+        class="text-container"
+        :style="isDarkMode ? { color: '#ffffff' } : null"
+      >
         <h4>Based on your reading history</h4>
         <h2>Designing search for mobile apps</h2>
         <p class="date">Aug 26th, 2021, 4pm</p>
@@ -54,8 +64,8 @@ h2 {
 
 .container {
   width: 50%;
-  margin: 0 auto;
-  padding: 50px 0;
+  margin: 20px auto;
+  padding: 50px 20px;
 }
 
 .container img {

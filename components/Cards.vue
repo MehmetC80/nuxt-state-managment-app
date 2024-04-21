@@ -31,11 +31,19 @@ const cards = [
     author: "Gavin Scott",
   },
 ];
+
+const { isDarkMode } = useDarkMode();
 </script>
 
 <template>
-  <div class="container">
-    <div class="content-container">
+  <div
+    class="container"
+    :style="isDarkMode ? { backgroundColor: '#182238' } : null"
+  >
+    <div
+      class="content-container"
+      :style="isDarkMode ? { color: '#ffffff' } : null"
+    >
       <h3>Reading List</h3>
       <div class="cards-container">
         <Card v-for="(card, index) in cards" :key="index" :card="card" />
